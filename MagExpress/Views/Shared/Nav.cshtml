@@ -1,0 +1,32 @@
+﻿@{
+    var routeValues = this.ViewContext.RouteData.Values;
+    var controller = routeValues["controller"] as string;
+    var action = routeValues["action"] as string;
+}
+<div id="navarea">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav custom_nav">
+                    <li class="">@Html.ActionLink(@Resources.Nav.Home, "Index", "Home", null, new { @class = Utils.ControlerViewIs("Home", "Index", ViewContext) ? "active" : "" })</li>
+                    <li class="dropdown">
+                        <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">Archives</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink(@Resources.Nav.Archive1, "Layout1", "Archive")</li>
+                            <li>@Html.ActionLink(@Resources.Nav.Archive2, "Layout2", "Archive")</li>
+                            <li>@Html.ActionLink(@Resources.Nav.Archive3, "Layout3", "Archive")</li>
+                            <li>@Html.ActionLink(@Resources.Nav.Archive4, "Layout4", "Archive")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink(@Resources.Nav.Codes, "Index", "Codes")</li>
+                    <li>@Html.ActionLink(@Resources.Nav.About, "Index", "About")</li>
+                    <li>@Html.ActionLink(@Resources.Nav.Contact, "Index", "Contact")</li>
+                    <li>@Html.ActionLink(@Resources.Nav.Error, "ErrorPage", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

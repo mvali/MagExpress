@@ -1,0 +1,20 @@
+﻿<div class="content_bottom_right">
+    @Html.Action("RecentPosts", "Posts")
+    <div class="single_bottom_rightbar">
+        <ul role="tablist" class="nav nav-tabs custom-tabs">
+            <li class="active" role="presentation"><a data-toggle="tab" role="tab" aria-controls="home" href="#mostPopular">Most Popular</a></li>
+            <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="messages" href="#recentComent">Recent Comment</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="mostPopular" class="tab-pane fade in active" role="tabpanel">
+                @Html.Action("MostPopular", "Posts")
+            </div>
+            <div id="recentComent" class="tab-pane fade" role="tabpanel">
+                @Html.Action("RecentComments", "Posts")
+            </div>
+        </div>
+    </div>
+
+    @Html.Action("BlogArchive", "Archive")
+    @Html.Action("PopularLinks", "Archive")
+</div>
